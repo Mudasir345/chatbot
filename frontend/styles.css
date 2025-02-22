@@ -1,0 +1,191 @@
+* {
+  font-size: 1.3vw;
+  font-family: "Epilogue", sans-serif;
+}
+
+html {
+  --scrollbarBG: #fff;
+  --thumbBG: #266990;
+}
+
+body {
+  background: #1f1b1b;
+}
+.head {
+  height: 43vw;
+  width: calc(100% - 55vw); /* Header ka width chatbot ke screen ke left aur right sides ke hisaab se */
+  background-color: rgb(208, 208, 219);
+  margin-left: 30vw; /* Chatbot ke left side ke hisaab se */
+  margin-top: 10vw;
+  border-radius: 0 10px 10px 0; /* Border-radius ko maintain kiya gaya hai */
+  box-shadow: 5px 5px 5px 5px rgb(208, 208, 219)
+}
+
+
+
+.head #header {
+  height: 5vw;
+  background: #15222d; /* Blue background */
+  padding: 0vw;
+  border-radius: 19px;
+  
+}
+
+.head #header h1 {
+  color: #fff;
+  font-size: 2vw;
+  font-family: "Finger Paint", cursive;
+  padding: 2vw;
+  background-color: #2196F3;
+}
+.head h1 {
+  background-color: #2196F3; /* Blue background */
+  padding: 1vw; /* Adjust padding as needed */
+  color: #fff; /* White text color */
+}
+
+
+.head #message-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.head #message-section {
+  height: 32vw;
+  padding: 0 2.5vw;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+.head #message-section::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+.head #message-section::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+.head #message-section #bot,
+.head #message-section #user {
+  position: relative;
+  bottom: 0;
+  min-height: 1.5vw;
+  border: 0.15vw solid #7fc3f4;
+  background-color: #f9f5f5;
+  border-radius: 0px 1.5vw 1.5vw 1.8vw;
+  padding: 1vw;
+  margin: 1.5vw 0;
+}
+
+.head #message-section #user {
+  border: 1.5px solid #84def5;
+  border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+  background-color: #4580ec;
+  float: right;
+}
+
+.head #message-section #user #user-response {
+  color: #fff;
+}
+
+.head #message-section .message {
+  color: #151313;
+  clear: both;
+  line-height: 1.2vw;
+  font-size: 1.2vw;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  max-width: 85%;
+  word-wrap: break-word;
+  z-index: 2;
+}
+
+.head #input-section {
+  z-index: 1;
+  padding: 0 4vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  overflow: hidden;
+  height: 5vw;
+  width: 100%;
+}
+
+.head #input-section input {
+  color: #0a0a0a;
+  min-width: 0.1vw;
+  outline: none;
+  height: 4vw;
+  width: 26vw;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 6px;
+  border-color: 10px #101313;
+  border-bottom: solid #3188c1 0.1vw;
+}
+
+.head .send {
+  background: transparent;
+  color: rgb(8, 83, 196);
+  border: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+  margin-left: 1.4vw;
+  margin-right: 0vw;
+  padding: 0;
+  position: relative;
+  outline: none;
+}
+
+.head .send .circle {
+  position: relative;
+  width: 4.8vw;
+  height: 4.8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.head .send .circle i {
+  font-size: 3vw;
+  margin-left: -1vw;
+  margin-top: 1vw;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  display: inline-grid;
+  padding: 5px;
+  background: #fff;
+  filter: blur(4px) contrast(12);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  height: 40px;
+  aspect-ratio: 3;
+  --c: #24b15ae4 64%,#3284f6 66% 98%,#eff464 101%;
+  background:
+    radial-gradient(35% 146% at 50% 159%,var(--c)) 0 0,
+    radial-gradient(35% 146% at 50% -59%,var(--c)) 100% 100%;
+  background-size: calc(200%/3) 50%;
+  background-repeat: repeat-x;
+  clip-path: inset(0 100% 0 0);
+  animation: l16 1.5s infinite linear;
+}
+.loader:after {
+  scale: -1 1;
+  animation-delay: -.75s;
+}
+@keyframes l16{
+  50% {clip-path: inset(0)}
+  to {clip-path: inset(0 0 0 100%)}
+}
+
+
+
